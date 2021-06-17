@@ -21,7 +21,6 @@ class Product(models.Model):
     name = models.CharField(max_length=50)
     price = models.FloatField()
     stock = models.IntegerField()
-    discount = models.IntegerField()
     thumbnail = models.ImageField(upload_to='media/img/title_img/', null=True)
 
     brand = models.ForeignKey(Brand, related_name='products', on_delete=models.CASCADE, default='UNKNOWN')

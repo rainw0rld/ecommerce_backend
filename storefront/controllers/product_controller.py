@@ -6,7 +6,7 @@ from storefront.serializers import ProductSerializer
 
 
 class ResultsSetPagination(PageNumberPagination):
-    page_size = 5
+    page_size = 20
     page_size_query_param = 'page_size'
     max_page_size = 1000
 
@@ -30,6 +30,9 @@ class CategoryProductAPIView(ListAPIView):
         category = self.kwargs.get('category')
         products = Product.objects.filter(category__name__icontains=category)
         return products
+
+class PopularProductAPIView(ListAPIView):
+    pass
 
 
 

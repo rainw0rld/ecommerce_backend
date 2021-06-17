@@ -10,5 +10,6 @@ urlpatterns = [
     path(r'orders/', OrderAPIView.as_view()),
     path(r'address/', AddressAPIView.as_view()),
     path(r'cart/', CartAPIView.as_view()),
-    path(r'', CustomerAPIView.as_view())
+    path(r'', CustomerAPIView.as_view()),
+    
 ]

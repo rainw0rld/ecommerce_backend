@@ -1,6 +1,6 @@
 from django.contrib import admin
 from users.models import Address, Order, OrderItem, Customer
-from storefront.models import Product, Category, Brand, ProductDetail
+from storefront.models import Product, Category, Brand, ProductDetail, ProductAlbum
 
 
 # Register your models here.
@@ -15,3 +15,4 @@ admin.site.register(Brand)
 admin.site.register(OrderItem)
 admin.site.register(Customer)
 admin.site.register(ProductDetail)
+admin.site.register(ProductAlbum)

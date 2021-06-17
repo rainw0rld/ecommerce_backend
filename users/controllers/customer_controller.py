@@ -11,8 +11,8 @@ class CustomerAPIView(APIView):
     permission_classes = [AllowAny]
 
     def get(self, request):
-        serializer = CustomerSerializer(data=request.user, fields=('email', 'first_name', 'last_name'))
-        return Response(serializer.data, status=True)
+        serializer = CustomerSerializer(request.user, fields=('id', 'email', 'first_name', 'last_name'))
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request):
         serializer = CustomerSerializer(data=request.data)

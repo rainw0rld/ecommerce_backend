@@ -63,7 +63,7 @@ class PlaceOrderSerializer(serializers.ModelSerializer):
 class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Customer
-        fields = ['email', 'password', 'first_name', 'last_name']
+        fields = ['id', 'email', 'password', 'first_name', 'last_name']
         extra_kwargs = {"password": {"write_only": True}}
 
     def __init__(self, *args, **kwargs):
