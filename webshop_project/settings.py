@@ -146,3 +146,11 @@ AUTH_USER_MODEL = 'users.Customer'
 CORS_ORIGIN_WHITELIST = [
     'http://127.0.0.1:3000',
 ]
+
+EMAIL_HOST = 'smtp.mail.ru'
+EMAIL_PORT = '2525'
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'django.project@bk.ru'
+EMAIL_HOST_PASSWORD = 'KRdY8WbEIYqcME4azsyX'
+DEFAULT_FROM_EMAIL = 'django.project@bk.ru'
+SERVER_EMAIL = 'django.project@bk.ru'

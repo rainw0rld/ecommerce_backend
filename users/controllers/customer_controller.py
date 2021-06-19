@@ -9,6 +9,7 @@ from users.serializers import CustomerSerializer
 
 class CustomerAPIView(APIView):
     permission_classes = [AllowAny]
+    authentication_classes = []
 
     def get(self, request):
         serializer = CustomerSerializer(request.user, fields=('id', 'email', 'first_name', 'last_name'))

@@ -12,6 +12,8 @@ class ResultsSetPagination(PageNumberPagination):
 
 
 class BrandProductAPIView(ListAPIView):
+    authentication_classes = []
+
     serializer_class = ProductSerializer
     pagination_class = ResultsSetPagination
     lookup_url_kwarg = 'brand'
@@ -22,6 +24,8 @@ class BrandProductAPIView(ListAPIView):
         return products
 
 class CategoryProductAPIView(ListAPIView):
+    authentication_classes = []
+
     serializer_class = ProductSerializer
     pagination_class = ResultsSetPagination
     lookup_url_kwarg = 'category'

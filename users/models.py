@@ -75,7 +75,7 @@ class Address(models.Model):
     street_1 = models.CharField(max_length=40)
     street_2 = models.CharField(max_length=20)
     city = models.CharField(max_length=20)
-    zipcode = models.IntegerField()
+    zipcode = models.CharField(max_length=7)
     region = models.CharField(max_length=25)
     country = models.CharField(max_length=25)
 
@@ -143,10 +143,11 @@ def orderitem_pre_save(sender, instance, *args, **kwargs):
 @receiver(post_save, sender=Customer)
 def customer_post_save(sender, instance, *args, **kwargs):
     send_mail(
-        'Welcome to my shit website',
-        f'Hey, {instance.first_name}! Thanks for joining my webiste!',
-        'django.project@bk.ru',
-        {instance.email}
+        'Welcome to my website!',
+        f'Hey, {instance.first_name}! Thanks for signing up, hope you enjoy our serivces!',
+        None,
+        [instance.email],
+        fail_silently=True
     )
 
 

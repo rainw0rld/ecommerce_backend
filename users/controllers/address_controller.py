@@ -28,18 +28,18 @@ class AddressAPIView(APIView):
         return Response(status=status.HTTP_200_OK)
 
     def delete(self, request):
-        if not request.user.addresses.filter(id=request.data['id']):
+        address = request.user.addresses.filter(id=request.data['id']).first()
+        if not address:
             return Response(status=status.HTTP_404_NOT_FOUND)
 
-        address = request.user.addresses.get(id=request.data['id'])
         address.delete()
         return Response(status=status.HTTP_200_OK)
 
     def put(self, request):
-        if not request.user.addresses.filter(id=request.data['id']):
+        address = request.user.addresses.filter(id=request.data['id']).first
+        if not address:
             return Response(status=status.HTTP_404_NOT_FOUND)
 
-        address = request.user.addresses.get(id=request.data['id'])
         serializer = AddressSerializer(address, data=request.data)
         if not serializer.is_valid():
             return Response(status=status.HTTP_400_BAD_REQUEST)
